@@ -1,0 +1,30 @@
+#define _CRT_SECURE_NO_WARNINGS 
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include < string.h >
+
+int main() {
+char Stroka1[20], Stroka2[20];
+scanf("%s\n %s", Stroka1, Stroka2);
+int DlinnaStr1 = strlen(Stroka1); // строка 1 - это большая
+int DlinnaStr2 = strlen(Stroka2);
+
+int countOfVlozheniy = 0;
+int justCountOfShohdeniy = 0; // в цикле будет считать количество сходных символов, если его значение совпадет с длиной строки 1, то 
+for (int i = 0; i < DlinnaStr1; i++) {
+	int justCountOfShohdeniy = 0;
+	for (int j = 0; j < DlinnaStr2; j++) {
+		if ((Stroka1[i + j] == Stroka2[j]) & (Stroka2[i + j] != '0')) {
+			justCountOfShohdeniy += 1;
+		
+		}
+		printf("%d %d - ", justCountOfShohdeniy, DlinnaStr2);
+		if (justCountOfShohdeniy == DlinnaStr2) {
+			countOfVlozheniy += 1;
+			}
+		printf("%d \n", countOfVlozheniy);
+		}
+	}
+	printf("%d", countOfVlozheniy);
+}
