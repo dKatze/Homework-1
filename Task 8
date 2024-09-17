@@ -1,0 +1,39 @@
+#define _CRT_SECURE_NO_WARNINGS 
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <string.h>
+
+void SwapElementsOfMassivTask8(int array[], int Menyaemoe1, int Menyaemoe2) {
+	array[Menyaemoe1] = array[Menyaemoe1] + array[Menyaemoe2];
+	array[Menyaemoe2] = array[Menyaemoe1] - array[Menyaemoe2];
+	array[Menyaemoe1] = array[Menyaemoe1] - array[Menyaemoe2];
+}
+
+int main() {
+int Massiv[20];
+int m;
+printf("Vvedite Znachenie M:");
+scanf("%d", &m);
+for (int i = 0; i < 20; i++) {
+	Massiv[i] = rand() % 100;
+	printf("%d ", Massiv[i]);
+	if (i == m - 1) {
+		printf("|");
+	}
+}
+for (int i = 0; i < m / 2; i++) {
+	SwapElementsOfMassivTask8(Massiv, i, m - i - 1);
+}
+for (int i = m; i < m + (20 - m) / 2; i++) {
+	SwapElementsOfMassivTask8(Massiv, i, 20 - i + m - 1);
+}
+for (int i = 0; i < 20 / 2; i++) {
+	SwapElementsOfMassivTask8(Massiv, i, 20 - 1 - i);
+}
+printf("\n");
+for (int i = 0; i < 20; i++) {
+	printf("%d ", Massiv[i]);
+}
+	return 0;
+}
