@@ -1,0 +1,30 @@
+#define _CRT_SECURE_NO_WARNINGS 
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include < string.h >
+
+int main() {
+char IshodnayaStroka[20];
+scanf("%s", IshodnayaStroka);
+int countOpenSkobka = 0, countCloseSkobka = 0;
+for (int i = 0; i < 20; i++) {
+	if (IshodnayaStroka[i] == '(') {
+		countOpenSkobka += 1;
+	}
+	if (IshodnayaStroka[i] == ')') {
+		countCloseSkobka += 1;
+	}
+
+	if (countCloseSkobka > countOpenSkobka) {
+		break;
+	}
+}
+if (countCloseSkobka != countOpenSkobka) {
+	printf("NO BALANCE BRUH");
+}
+else {
+	printf("Yeah, its okay");
+}
+
+}
