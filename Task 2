@@ -1,0 +1,20 @@
+#define _CRT_SECURE_NO_WARNINGS 
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include < string.h >
+ 
+SwapMeaningOfTwoVariablesWithoutThirdVariable(int Var1, int Var2) {
+	Var1 += Var2;
+	Var2 = Var1 - Var2;
+	Var1 = Var1 - Var2;
+	printf("%d\n%d", Var1, Var2);
+}
+
+int main(void){
+setlocale(LC_ALL, "Russian");
+int Var1, Var2;
+scanf("%d", &Var1);
+scanf("%d", &Var2);
+SwapMeaningOfTwoVariablesWithoutThirdVariable(Var1, Var2);
+}
