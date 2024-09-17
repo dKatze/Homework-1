@@ -1,0 +1,24 @@
+#define _CRT_SECURE_NO_WARNINGS 
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include < string.h >
+int main(void){
+	setlocale(LC_ALL, "Russian");
+printf("Введите число количества элементов маасива: ");
+int KolvoElementovMassiva;
+scanf("%d", &KolvoElementovMassiva);
+int VvodimyeiMassiv[1000];
+for (int i = 0; i < KolvoElementovMassiva; i++) {
+	scanf("%d", &VvodimyeiMassiv[i]);
+}
+int countOf0Elements = 0;
+for (int i = 0; i < KolvoElementovMassiva; i++) {
+
+	if (VvodimyeiMassiv[i] == 0) {
+		countOf0Elements += 1;
+	}
+
+}
+printf("%d", countOf0Elements);
+}
