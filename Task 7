@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
-#include < string.h >
+#include <string.h>
 
 int main() {
 char Stroka1[20], Stroka2[20];
